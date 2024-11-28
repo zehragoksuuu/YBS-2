@@ -1,0 +1,691 @@
+package odevlervecozumleri;
+
+public class ekleNode {
+
+}
+
+
+//24.11.2024 tarihli veri tabanı ödevi
+// soruda verilen sayılarıı çift yönlü bağlı listesi ile oluştur ve bu listeye 83 sayısını aşamalı olarak ekle 
+int sayı = (69, 80 , 88, 93,98) ; 
+int indis= 0; 
+int gezici=0; 
+int n=0; 
+int i=83; 
+int secim=0; 
+String eleman =null; 
+ekleNode next; // sonraki düğümü gösterebilmek için 
+ekleNode izleme;// önceki düğümü göserebilmek için  
+
+
+
+public  void ekle(int sayı,int indis) {// ilk başta bir constractor türettik 
+	
+	this.sayı = sayı; 
+	ekleNode.next=null; 
+	ekleNode.izleme =null; 
+	 
+	
+}  
+ekleNode baş= null; 
+ekleNode son =null; // burada düğüm yapısını girdik 
+  void arayaEkle(int sayı) 
+  { 
+	 ekleNode eleman=  new ekleNode(sayı); // baş boşsa 
+	 if (baş==null)// burada düğüm yapısının özelliklerini girdik 
+	 { 
+		 baş=eleman; 
+		 son=eleman; 
+		 
+		 
+	 }
+	 else if (baş!= null&& indis== 0)// baş yapısınından başka bir düğüm varsa (sadece 1 tane düğüm yapısı varsa)
+	 { 
+		 
+		 eleman.next=baş; //başı güncellememiz gerekir 
+		 baş.izleme= eleman; 
+		 baş=eleman; 
+	 } 
+	 else 
+		 int n=0; // elemaları saydırmak için 
+	 ekleNode gezici=baş; 
+	 while(gezici!= null)  // yani listede bir düğüm yapısı varsa  
+	 { 
+		 gezici=gezici.next; 
+		 n++; //listedeki elemanları saymak için 
+	 } 
+	 gezici=baş; 
+	 					// son elemanda değiştirilmek istenebilir
+	  if(indis>n) //n-1 son düğüm yapısını belli etemektedir 
+		  son.next=eleman; 
+	  eleman.izleme= son; 
+	  son= eleman; 
+  } 
+  else 
+  { 
+	  int i=83; // araya eklenecek sayı
+	  while(i!=indis) // ekenecekdeğer indis(ekleenecek bölgeyi bulmayı amaçalyan bir metot) değilse 
+	  { 
+		   gezici=gezici.next ; // geziciyi bulacağımız bölgeye kadar ilerletir bulduğumuz bölgede ise i değerini atama işlemi gerçekleşecek  
+		   i++; // gezici eklenecek düğümün üzerinde anlamına gelmektedir
+		   
+	  }   
+	  eleman.izleyici=gezici.izleyici; 
+	  
+	  gezici.izlme.next=eleman //ekleneceğin bir öncesinin sonrası şu anda eklenen yapıya eşittir. 
+	
+	  eleman.next=gezici; // burada eklenecek elemanın önceki ve sonraki düğüm yapısı hakkında bilgi verdi
+	  gezici.izleyici= eleman ;  
+	  
+	  
+	  
+	  { 
+		  void yazdir() 
+		  { 
+			  ekleNode gezici= baş; // gezici başa eşitse sadece 1 eleman listede vardır
+			  System.out.println("sadece baş elemanını yazdır"); 
+			  while(gezici!= null) // eyer düğümde birden fazla eleman varsa
+			  { 
+				  System.out.println(gezici.sayı+ " >"); 
+				  gezici=gezici.next; // gezici son sayıyı bulana kadar devam eder
+			  } 
+			  System.out.println("> son."); 
+			  
+			  
+			  public static void main(String[]args) { 
+			ekleNode lst= new ekleNode (); 
+			int secim=-1, sayı; 
+			while( secim!=0) 
+			{ 
+				System.out.println("1.liste yapısına gir"); 
+				System.out.println("2.liste yapısında arayaekle"); 
+
+				System.out.println("4. çıkış"); 
+				if (secim==1)
+				{ 
+					System.out.println("sayı :"); 
+				}
+				else if(secim==2 ) 
+				{  
+					System.out.println("sayi: "); 
+					lst.arayaekle(sayı); 
+					
+					
+				} 
+				else (secim==3)
+				{ 
+					System.out.println("çıkış işleminiz tamamlanmıştır"); 
+					
+				}
+		  }
+			  } 
+		 lst.yazdir(); 
+2.soru için 
+package odevlervecozumleri;
+import java.util.*; 
+
+public class kiloNode {
+
+ 
+	//24.11.2024 tarihli veri tabanı ödevi
+// kilo değerlerini tutan tek yönlü bağlı liste yapısını seçiniz ( başa ekleme yapılacak ) kilo değerine geöre vücut kitle endeksi hesapla 
+ int kilos = (45,78,56,65,59); 
+		  
+ double boy= (1.70,1.90,1.50,1,69,1.63) ; // ilk başta vucut endeks değerleini giriniz
+ String ad	="ayşe"	,"ali","ahmet", "veli","kemal"; 
+ double vucutendeksi;  
+ double sonuc; 
+ int secim= 0;  
+ int  Kiloliste; 
+ kiloNode next; 
+ kiloNode kln =new kiloNode( ) 
+		 { 
+	 this.kilos= kilos; 
+	 this.boy=boy; 
+	 this.ad=ad; 
+	 
+		 }
+ 
+ sonuc= kilos /boy*boy // vuuct indeks değerlerini hesaplayan yapıyı gir
+		 { 
+	 
+		 }
+ 
+ { 
+	switch(vucutendeksi) 
+	{ 
+	case 1: System.out.println("18.5 ten küçükse yaz düşük kütle endeksine sahiptir"); 
+	break; 
+	case 2: System.out.println("18.5 ile 24.99 arasında ise yaz normal kilo endeksine sahiptir "); 
+	break; 
+	case 3: System.out.println("25.0 ile 29.99 arasında ise yaz fazla kilo endeksine sahiptir"); 
+	break; 
+	case 4: System.out.println("30.0 dan fazla ise yaz obez kiloya sahiptir"); 
+	break; 
+	
+ next=null; // kilo endeks şartlarını gir
+	}   
+	 
+	
+	
+	kiloNode baş= null;  // ilk düğüm yapısını oluştur 
+	kiloNode son= null; 
+	kiloNode gezici= null; 
+	
+	{ 
+		
+	} 
+ } 
+}  
+
+	void ekle() // yapıyı ekle 
+	{ 
+	System.out.println("vucut endeks değerlerini giriniz"); 
+	System.out.println("kilos:"); 
+	System.out.println("ad: "); 
+	System.out.println("boy: "); 
+	System.out.println("vucut endeksi: ");  
+	System.out.println(" sonuc: "); 
+	
+	
+	
+	kiloNode deger=new kiloNode(kilos, ad, vucutendeksi) ; 
+	// daha önce bir liste yapısı oluşmuş mu kontrol et 
+	if (baş==null)
+	{ 
+		baş=deger; // baş boşsa deger yapısından bir yapı ata  
+		System.out.println("vucutendeks listesi oluştu ve ilk kişinin endeksleri eklendi"); 
+		
+		
+	} 
+	else 
+		deger.next= baş; // değilse listenin içindeki yapuyı baş düğüme eşitle 
+	baş= deger;  
+	
+	
+			{  
+	
+		
+			}
+	
+	void yazdir() 
+	{ 
+		if (baş==null) 
+			System.out.println("vucutendeks listesi boştur hesaplanacak sonuç yoktur"); 
+		
+	} 
+	else 
+	{ 
+		gezici= baş; 
+		while (gezici!= null) // gezici boş değilse son düğüme kadar git 
+		{ 
+			System.out.println(gezici.vucutendeksi + "vucutendeksli kişi bilgileri"); 
+			System.out.println("kilos : + gezici.kilos"); 
+			System.out.println("boy :+ gezici.boy "); 
+			System.out.println("vucutendeksi: + gezici.vucutendeksi"); 
+			System.out.println("sonuc : + gezici.sonuc"); 
+		
+			gezici=gezici.next;
+		}
+			gezici=son; { 
+				
+			System.out.println("listede daha başka kişi kalmadı"); 
+			
+						}
+					}  
+ } 
+ 
+	public static void main(String []args ) { 
+		double secim= -1; // kendisinden bir önceki düğümü alabilmek için 
+		kiloNode kls= new kiloNode(); 
+		while (secim != 0) 
+		{  
+			System.out.println("vucut indeksi uygulamasına hoşgeldiniz"); 
+			System.out.println("1.boyları göster"); 
+			System.out.println("2. isimleri göster"); 
+			System.out.println("3.kiloları göster"); 
+			System.out.println("4.vucut indekslerini göster"); 
+			System.out.println("5.son göster"); 
+			secim=kiloNode.next(); 
+			if (secim==1); 
+			kls.boylarıgöster();
+			else if (secim==2); 
+			kls.isimlerigöster(); 
+			else if (secim==3); 
+			kls.kilolarıgöster(); 
+			else if (secim==4); 
+			kls.vucutendekslerinigöster(); 
+			else if (secim==5); 
+			kls.songöster(); 
+			else 
+				System.out.println("hatalı bir işlem yaptınız lütfen girdiğiniz numara aralığını kontrol ediniz"); 
+			
+			kls.yazdir(); 
+3.soru ipackage odevlervecozumleri;
+import java.util.*; 
+public class OgrencİNode {
+// 24.11 2024 tarihinde veri tabanı için 
+}
+//soru1: öğrenci isimlerini ve notlarını tutan tek yönlü bağlı liste yapısını oluşturunuz.Daha sonra bu
+//listye en başarılı öğrencinin bilgilerini ekrana yazdıran bir metot ekleyiniz(ana metotta çalıştır).
+//adım1: ilk başta düğüm bilgilerini gir
+int numara; 
+String ad; 
+String soyad; 
+int vize; 
+int fin;//final yazamayız çünkü final java karakteridir
+double ortalama; 
+String basarı;  
+OgrencİNode next;  
+
+OgrencİNode ogr= new OgrencİNode()  ; 
+{ 
+	
+	
+	this.numara=numara; 
+	this.ad=ad; 
+	this.soyad=soyad; 
+	this.vize=vize; 
+	this.fin= fin;
+	
+}
+//adım2: şimdi başarı durumunu ortaya çıkartabilmek için ortalamayı hesapla 
+ortalama= vize*0.4	+	fin * 0.6; 
+//adım 3 : başarı şartlarını sağlayacak kontrol durumlarını girmemeiz gerekir 
+if(ortalama>= 50.0) 
+	basarı= "Geçti"; 
+else
+	basarı= "Kaldı"; 
+next= null; 
+ // düğüme bir öğrenci kişi bilgileri eklenecek  
+Scanner scanner = new Scanner(System.in);// öğrenci gerçek ad soyad bilgilerini dışarıdan aldı 
+OgrencİNode baş= null;  
+OgrencİNode son= null;   
+OgrencİNode gezici=null; 
+OgrencİNode gezici2=null; 
+
+			}
+		}
+void ekle()
+{ 
+	System.out.println("Yönetim Bilişim Sistemlerine kayıt olacak bir öğrenci giriniz"); 
+	System.out.println("numara : "); numara= scanner.nextInt();   
+	scanner.nextLine(); // boşuk karakterini intte sayıp hata atmaması için 
+	System.out.println("ad: "); ad= scanner.nextLine();   
+	System.out.println("soyad : "); soyad= scanner.nextLine(); 
+	System.out.println("vize : "); vize= scanner.nextInt();  
+	System.out.println("fin: "); fin= scanner.nextInt();  
+// düğüme öğrenci kişisi ekle 
+	OgrencİNode kişi= new OgrencİNode();  
+	// daha önceden öğrenci kişisi bilgisi var mıydı? bunu kontrol etmemeiz gerekir  
+	if(baş==null) // baş boşsa
+	{ 
+		baş= kişi; // başa kişi ekle  
+		son =kişi; 
+		
+		System.out.println("Yönetim Bilişim sistemlerine ilk kişi listesi oluşturuldu ve ilk kişi ekelndi"); 
+		
+		
+		
+	}
+	else 
+	{ 
+		kişi.next= baş; 
+		baş= kişi; 			// başta kişi vardı ve devamına bir kişi eklendi 
+	System.out.println("Yönetim Bilişim Sistemlerine yeni bir kişi eklendi "); 
+	
+	}
+	 
+	
+	
+} 
+void yazdir()
+{ 
+	if(baş==null) // eyer liste boşşsa
+	{ 
+		System.out.println("liste yapısı boştur lütfen bir kişi ekleyiniz"); 
+		
+	} 
+	else 
+	{ 
+		gezici= baş; // eyer listeye daha önce eleman eklenmişse
+		while(gezici!= null); // BAŞ YAPISI BOŞ DEĞİLSE 
+		{ 
+			System.out.println("gezici.numara +Numaralı öğrenci bilgileri " ); 
+			System.out.println("ad: +gezici.ad " ); 
+			System.out.println("soyad: +gezici.soyad " ); 
+			System.out.println("vize:	+gezici. vize " );  
+			System.out.println("fin:  +gezici.fin " ); 
+			System.out.println("ort: + gezici.ortalama "); 
+			System.out.println("basarı: + gezici.basarı "); 
+			
+			gezici=gezici.next; 
+			   
+		}
+	}
+void basarı() 
+{ 
+	if(baş==null) 
+	{ 
+		System.out.println("liste yapısı boştur lütfen öğrenci ekleyiniz"); 
+	} 
+	else 
+	{  
+		gezici=baş;  
+		double büyük= gezici.ortalama; // gezilen değerler arsında başarı ortalamasını yakalayan var mı? 
+		while( gezici!=null);  
+		{ 
+			if (büyük< gezici.ortalama)
+			{ 
+				basarı=gezici.ortalama; // eyer ortalama değeri yukarıda girlen değerden büyükse onu basarılı say 
+				numara=gezici.numara; 	// ve diğer bilgilerini gir  
+				ad= gezici.ad; 
+				soyad=gezici.soyad; 
+				vize= gezici.vize; 
+				fin= gezici.fin; 
+				ortalama=gezici.ortalama; 
+				basarı=gezici.basarı; 
+				
+			}
+		}
+		
+	}
+	}
+} 
+ 
+{ 
+System.out.println("en basarılı öğrenci bilgileri " ); 
+System.out.println("ad: "+ ad  ); 
+System.out.println("soyad:" +soyad  ); 
+System.out.println("vize:	"+ vize  );  
+System.out.println("fin: " +fin  ); 
+System.out.println("ort: " + ortalama ); 
+System.out.println("basarı:" + basarı );  
+}
+public static void main(String [] args ) { 
+	int sonuc =0;  
+	OgrencİNode ybs =new OgrencİNode(); 
+	Scanner scanner=new Scanner(System.in); 
+	
+	while(sonuc!=0) 
+	{ 
+		System.out.println(); 
+		System.out.println("1.yeni kayıt"); // menü yapısı 
+		System.out.println("2.basarı durumu "); 
+		System.out.println("3. menüden çıkış "); 
+		sonuc=scanner.nextInt();  
+		 
+		if (sonuc==1)
+		{ 
+			ybs.yenikayıt(); 
+			else if (sonuc==2) 
+			{ 
+				ybs.basarıdurumu(); } 
+			
+				else if(sonuc==3);  
+			{ 
+				ybs.menüdençıkış();  
+			
+				else 
+				{ 
+					System.out.println("hatalı seçim yapıldı lütfen girdiğiniz sayıyı tekrar kontrol ediniz "); 
+				}
+			}
+		}
+		
+		ybs.yazdir(); 
+		
+		
+	}
+}
+4.soru için 
+
+package odevlervecozumleri;
+import java.util.*; 
+public class silmeNode {
+// 24.11.2024 tarihli veri tabanı ödevi için 
+}
+int veri; 
+silmeNode next; 
+silmeNode izleme; 
+public silmeNode(int veri) { 
+	this.veri=veri; 
+	silmeNode next= null; 
+	izleme=null;  
+	silmeNode baş=null; 
+	silmeNode son=null; 
+	 
+	silmeNode gezici= null; 
+	int sayac = 0;  
+	int i =0; 
+	int secim =0 ; 
+} 
+
+	
+
+	
+	 
+ 
+	
+        
+
+void oncekiSil( int indis ){  
+{ 
+	Object baş;
+	if (baş!=null)
+	{ 
+		if(baş.next== null && int<=0) // baş boşa eşit ve int 0 dan küçük ise 
+			baş= null; // baş ve son yapısı boş 
+			son= null;  
+			System.out.println("listede eleman yok silme işlemi gerçekleştirilemiyor"); 
+	}  
+	else 
+		// listede kaç tane eleman var ilk başta onu saymamız gerekir 
+		int sayac = 0; 
+	silmeNode gezici= baş ; 
+	while( gezici!= null )// eyer gezici boş değer değilse daha önceden eleman vardır o yüzden kontrol aşaması gerekemektedir. 
+		
+	{ 
+		sayac++; 
+		silmeNode=gezici.next; 
+		if (indis >= n-1) // n-1 son düğümü karşılayacak 
+			  
+	}
+	else  
+		gezici= baş;  // hanngi eleman olduğunu bulmamız gerekir 
+	int i=0; // eyer i 0 sa
+	while(i<indis)  
+	{ 
+		i++; 
+		gezici= gezici.next // artık gezici döngüden çıktığı zamn silinmek istenen düğümün içerisindedir. bir önceki düğümü ve bir sonraki düğümü birbirine bağla 
+	} 
+	gezici.next.izleme= gezici.izleme; // gezici kendisinden bir sonrakini izleyici kendisinden bir öncekini temsil etmektedir. 
+	gezici.izleme.next= gezici.next ; // gezicinin next izlemesi= gezici izlemeye eşit olursa çift yönlü bağlanma gerçekleşir.  
+	 
+					}  
+				} 
+void yazdır() 
+{  
+	Node gezici=baş; 
+	System.out.println("sadece baştaki elemanı yaz "); 
+	while(gezici!=null) 
+	{ 
+		System.out.println("gezicinin bütün elemanlarını yaz " ); 
+		gezici=gezici.next; 
+		
+	}
+ System.out.println("son"); 
+ 
+	
+				
+	}
+	
+	
+	
+		{
+			
+	}
+	
+} 
+	public static void main(String[]args) {  // burada menü sınıfı oluşturulacak
+	Scanner scanner=new Scanner(System.in) ; 
+	silmeNode node= new silmeNode();  
+	int secim=-1,sayi,indis; 
+while (secim!= 0) 
+{ 
+	System.out.println("2: baştan bir sonraki düğümü sil"); 
+	System.out.println(" 3: sondan bir önceki düğümü sil ");
+	System.out.println(" 0: listeden çıkıs "); 
+	  
+	if (secim== 2) 
+	{ 
+		System.out.println("sayi: "); 
+		sayi= scanner.nextInt(); 
+	node.baştanbirsonrakiSil(indis); 
+	
+	}
+}
+if (secim== 3) 
+{ 
+	System.out.println("sayi: "); 
+	sayi= scanner.nextInt(); 
+node.sondanbirsonrakiSil(indis);  
+
+if (secim== 0) 
+{ 
+	System.out.println("sayi: "); 
+	sayi= scanner.nextInt(); 
+node.çıkış(indis); 
+	
+	silmeNode.yazdir(); 
+	
+5 soru için 
+package odevlervecozumleri;
+import java.util.*; 
+public class tersNode {
+
+  // 24.11.2024 tarihli ödev için 
+
+// tek yönlü bağlı listeyi tersten yazdırarak yeni bir bağlı listeyi aktaran programın java kodlarını yazınız 
+int sayi ; 
+String ad ; 
+String soyad ; 
+tersNode next; 
+int indis=0; 
+tersNode gezici=null; 
+tersNode gezici2=null; 
+public tersNode(int sayi, String ad, String soyad, tersNode next) { // parametreli metot
+	
+	this.sayi = sayi; // burada düğüm yapsı oluşturuldu
+	this.ad = ad;
+	this.soyad = soyad;
+	this.next = next; 
+	next=null; 
+} 
+
+	
+}
+tersNode baş= null; 
+tersNode son= null; 
+tersNode terstenYazdir= null; 
+Scanner scanner= new Scanner(System.in) ; 
+
+void ekle() 
+{ 
+	System.out.println(" ters yazdırma metodunun bilgisini giriniz"); 
+	System.out.println(" sayi: "); sayi= scanner.nextInt(); 
+	System.out.println("ad :");    ad= scanner.nextLine(); 
+	System.out.println("soyad: "); soyad= scanner.nextLine(); 
+	
+	tersNode sayac =new tersNode(sayi, ad,soyad,sayac); // bilgileir düğüm yapısına girdik şimdiise düğüm yapısını kontrol et 
+	if(baş== null) // baş eyer boşsa 
+	{ 
+		baş= sayac; // başa eleman ekle  
+		son =sayac; 
+		System.out.println("ilk düğüm yapısı eklendi  ve listenin ilk elemanı atandı"); 
+		
+	}
+	else // başta eleman varsa  
+	{ 
+		sayac.next= baş; 
+		baş =sayac; 
+		System.out.println(sayi + "sayili kişi düğüme kayıt edildi"); 
+		
+		
+	}
+	
+} 
+void terstenYazdir() // tersten yazdırmak için ise aynı ekle veya silde yaptığımız gibi yeni bir yapı oluşturacağız  
+{ 
+	tersNode tersListe=null; 
+	tersNode next =baş; 
+	
+		tersNode trsListe= new tersNode(sayi,ad,soyad,trsListe); 
+		if (baş ==null) 
+		{
+			baş=trsListe; 
+			System.out.println("tersten yazdırma işleminin ilk elemanı ekelenmiştir"); 
+		
+		else if 
+		{ 
+			trsListe.next= baş; 
+			baş=trsListe; 
+			System.out.println("zaten daha önceden eleman vardı diğer eleman yapılarını giriniz"); 
+			
+		} 
+		else 
+		{ 
+			gezici=baş; // şimdi biz liste yapısını gezip elemanları sayıp son elemanı bulmamız gerekmektedir 
+			gezici2= baş;  
+			while(gezici.next!=null) 
+			{  
+				if(sayi== gezici.next) 
+				{ 
+					gezici2.next=gezici.next; 
+					System.out.println("meteotlar tersten yazıldı"); 
+					
+				}
+				gezici2=gezici; // sonsuz döngüye girmesin diye 
+				gezici.gezici.next; // bir sonraki düğüm yapısına geçsin 
+				
+			}
+		if(sayi== gezici.next) 
+		{ 
+			gezici2.next= gezici.next; 
+			System.out.println("metotlar tersten yazıldı"); 
+		}
+	}
+}
+void yazdir() 
+{ 
+	if(baş==null)
+		System.out.println("liste boş lütfen eleaman ekleyiniz"); 
+} 
+	else 
+{
+	gezici= baş; 
+	while(gezici!= null) 
+	{  
+		System.out.println("ad: + gezici.ad"); 
+		System.out.println("soyad+ gezici.soyad"); 
+		System.out.println("sayi + gezici.sayi"); 
+		
+		gezici=gezici.next; 
+	   } 
+	}
+}
+
+
+
+
+
+public static void main(String[]args) { 
+	tersNode lst=new tersNode(ad,soyad,sayi,indis,); 
+	lst.ekle("15"); 
+	lst.ekle("elif"); 
+	lst.ekle("demir"); 
+	lst.yazdir(); 
+			} 
+}
+
+Melih ışık veri tabanı 3 ödevi
