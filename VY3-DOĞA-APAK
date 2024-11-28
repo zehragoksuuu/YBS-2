@@ -1,0 +1,324 @@
+1.SORU
+package veri3;
+
+public class node {
+	
+	String isim;
+    int not;
+    node next;
+
+    public node(String isim, int not) {
+        this.isim = isim;
+        this.not = not;
+        this.next = null;}}
+    
+    
+    class tekYonlü{
+    	node head;
+    	public void ekle(String isim, int not) {
+            node yeni = new node(isim, not);
+            if (head == null) {
+                head = yeni;
+            } else {
+                node temp = head;
+                while (temp.next != null) {
+                    temp = temp.next;
+                }
+                temp.next = yeni;
+            }}
+    	
+    public void BasariliÖYazdir() {
+        if (head == null) {
+            System.out.println("Liste boş!");
+            return;
+        }
+    
+    node Basarili = head;
+    node temp = head;
+
+    while (temp != null) {
+        if (temp.not > Basarili.not) {
+            Basarili = temp;
+        }
+        temp = temp.next;
+    }
+    
+    
+    System.out.println("En Başarılı Öğrenci:"+ Basarili.isim +" "+Basarili.not);  
+}    
+	public static void main(String[] args) {
+
+		tekYonlü l=new tekYonlü();
+		    l.ekle("doğa", 83);
+	        l.ekle("ilim", 47);
+	        l.ekle("dilan", 78);
+	        l.ekle("eda", 75);
+		l.BasariliÖYazdir();
+}}
+
+
+
+2.SORU
+package veri7;
+
+public class node {
+	String isim;
+    double kilo; 
+    double boy;
+    node ileri;
+    public node(String isim, double kilo, double boy) {
+        this.isim = isim;
+        this.kilo = kilo;
+        this.boy = boy;
+        this.ileri = null;
+    }
+    public double Hesap() {
+        return kilo / (boy * boy);
+    }
+
+    public String vücutDurumu() {
+        double vücüt = Hesap();
+        if (vücüt < 18.5) {
+            return "Düşük kilolu";
+        } else if (vücüt < 25) {
+            return "Normal kilolu";
+        } else if (vücüt < 30) {
+            return "Fazla kilolu";
+        } else {
+            return "Obez";
+        }
+    }
+}
+class BagliListe {
+    node bas; 
+    public void sonaEkle(String isim, double kilo, double boy) {
+        node yeniKisi = new node(isim, kilo, boy);
+        if (bas == null) {
+            bas = yeniKisi;
+        } else {
+            node temp = bas;
+            while (temp.ileri != null) {
+                temp = temp.ileri;
+            }
+            temp.ileri= yeniKisi;
+        }
+    }
+    public void Yazdir() {
+        node temp = bas;
+        while (temp!= null) {
+        	System.out.printf("İsim: %s, Kilo: %.1f kg, Boy: %.2f m, VKİ: %.2f, Durum: %s\n",
+                    temp.isim, temp.kilo, temp.boy, temp.Hesap(), temp.vücutDurumu());
+
+            temp=temp.ileri;
+        }
+    }
+    public static void main(String[] args) {
+        BagliListe liste = new BagliListe();
+
+      
+        liste.sonaEkle("Ayşe", 45, 1.70);
+        liste.sonaEkle("Ali", 78, 1.90);
+        liste.sonaEkle("Ahmet", 56, 1.50);
+        liste.sonaEkle("Veli", 65, 1.69);
+        liste.sonaEkle("Kemal", 59, 1.63);
+        liste.Yazdir();}
+
+}
+
+
+3.SORU
+package veri6;
+
+public class Dugum {
+	int sayı;
+    Dugum ileri;
+    Dugum geri;
+    public Dugum(int sayı) {
+        this.sayı = sayı;
+        this.ileri = null;
+        this.geri = null;
+    }
+}
+
+class CiftYonluListe {
+    Dugum bas;
+
+    public void siraliEkle(int deger) {
+        Dugum yeni = new Dugum(deger);
+
+        if (bas == null) {
+            bas = yeni;
+            return;
+        }
+        if (deger < bas.sayı) {
+            yeni.ileri = bas;
+            bas.geri = yeni;
+            bas = yeni;
+            return;
+        }
+        Dugum temp = bas;
+        while (temp.ileri != null && temp.ileri.sayı < deger) {
+            temp = temp.ileri;
+        }
+        yeni.ileri = temp.ileri;
+        yeni.geri = temp;
+
+        if (temp.ileri != null) {
+           temp.ileri.geri= yeni;
+        }
+
+        temp.ileri = yeni;
+    }
+    public void yazdır(){
+    Dugum temp = bas;
+    while (temp != null) {
+        System.out.print(temp.sayı + " ");
+        temp = temp.ileri;
+    }
+    System.out.println();
+}
+    public static void main(String[] args) {
+        CiftYonluListe liste = new CiftYonluListe();
+        liste.siraliEkle(69);
+        liste.siraliEkle(80);
+        liste.siraliEkle(88);
+        liste.siraliEkle(93);
+        liste.siraliEkle(98);
+        liste.yazdır();
+        liste.siraliEkle(83);
+        liste.yazdır();}}
+
+
+4.SORU
+package veri5;
+
+public class düğüm {
+	 String isim;
+	    düğüm ileri;
+	    düğüm geri ;
+	    public düğüm(String isim) {
+	        this.isim = isim;
+	        this.ileri = null;
+	        this.geri = null;
+	    }
+	}
+
+class CiftYonluListe {
+	 düğüm head; 
+	 public void Ekle(String isim) {
+	     düğüm yeni = new düğüm(isim);
+	     if (head == null) {
+	         head = yeni;
+	     } else {
+	         düğüm temp = head;
+	         while (temp.ileri != null) {
+	             temp = temp.ileri;
+	         }
+	         temp.ileri = yeni;
+	         yeni.geri = temp;
+	     }
+	 }
+	 public void sil() {
+		    
+	     if (head == null || head.ileri == null) {
+	         System.out.println("Silinecek düğüm yok");
+	         return;
+	     }   
+	     düğüm temp = head;
+	     while (temp.ileri.ileri != null) {
+	         temp = temp.ileri;
+	     }
+	     temp.geri.ileri = temp.ileri; 
+	     if (temp.ileri != null) {
+	         temp.ileri.geri = temp.geri;
+	     }}
+	 public void Yazdir() {
+		 if(head==null) {System.out.println("liste yapısı boş");}
+		 else {
+	     düğüm temp = head;
+	     while (temp != null) {
+	    	 System.out.print(temp.isim+" ");
+	         temp = temp.ileri;}}
+	     
+	     
+	 }
+	 public static void main(String[] args) {
+		 CiftYonluListe liste =new CiftYonluListe();
+		  liste.Ekle("doğa");
+		  liste.Ekle("dilan");
+		  liste.Ekle("eda");
+		  liste.Ekle("ilim");
+		  liste.Yazdir();
+		  System.out.println();
+		  liste.sil();
+		  liste.Yazdir();
+
+		}}
+
+5.SORU
+package veri4;
+
+public class dugum {
+	 int sayı;
+	    dugum ileri;
+	    public dugum(int veri) {
+	        this.sayı = veri;
+	        this.ileri = null;
+	    }
+	}
+class BagliListe {
+    dugum bas; 
+    
+    public void Ekle(int sayı) {
+        dugum yeni = new dugum(sayı);
+        if (bas == null) {
+            bas = yeni;
+        } else {
+            dugum temp = bas;
+            while (temp.ileri != null) {
+                temp = temp.ileri;
+            }
+            temp.ileri = yeni;
+        }
+    }
+
+
+public BagliListe terstenListe() {
+    BagliListe tersListe = new BagliListe();
+    dugum temp = bas;
+    while (temp != null) {
+        dugum yeniDugum = new dugum(temp.sayı);
+        yeniDugum.ileri = tersListe.bas; 
+        tersListe.bas = yeniDugum;
+        temp = temp.ileri;
+    }
+
+    return tersListe;
+}
+public void Yazdir() {
+ 	 if(bas==null) {System.out.println("liste yapısı");}
+ 	 else {
+      dugum temp = bas;
+      while (temp != null) {
+     	 System.out.print(temp.sayı+" ");
+          temp = temp.ileri;}}
+      
+      
+  }
+public static void main(String[] args) {
+	
+	
+	BagliListe liste = new BagliListe();
+    liste.Ekle(1);
+    liste.Ekle(2);
+    liste.Ekle(3);
+    liste.Ekle(4);
+    liste.Ekle(5);
+    liste.Yazdir();
+    System.out.println();
+    BagliListe tersListe =liste.terstenListe();
+    tersListe.Yazdir();
+  
+}
+
+}
